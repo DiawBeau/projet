@@ -4,9 +4,18 @@
 	<title></title>
 </head>
 <body>
+	@include('layout.layout')
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-">
+		<h1>{{$adherant->last_name}}</h1>
+
+	<a href = 'delete/{{ $adherant->id }}'>Delete</a>
+
+</div>
 
 
-	<h1>{{$train->txt}}</h1>
 
 </body>
 </html>

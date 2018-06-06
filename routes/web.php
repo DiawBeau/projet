@@ -1,7 +1,7 @@
 <?php
 
 use App\Training;
-use App\Adherant;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +13,7 @@ use App\Adherant;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/trains', function () {
 
 	$trains = Training::all();
@@ -26,14 +26,25 @@ Route::get('/trains/{train}', function ($id) {
     return view('trains.show',compact('train'));
 });
 
-
+*/
 Route::get('/', function () {
 
     return view('welcome');
 });
 
-Route::get('/adherants', function () {
+Route::get('/adherants', 'AdherantsController@index');
 
-	$adherants  = Adherant::all();
-    return view('adherants.index',compact('adherants'));
-});
+//Route::get('adherants/delete/{id}', 'AdherantsController@destroy');
+
+
+Route::get('/adherants/create', 'AdherantsController@create');
+
+
+Route::get('/adherants/{adherant}', 'AdherantsController@show');
+
+Route::get('/adherants/{adherant}/edit', 'AdherantsController@edit');
+
+//Route::post('/adherants/{adherant}', 'AdherantsController@update');
+
+Route::post('/adherants', 'AdherantsController@store');
+

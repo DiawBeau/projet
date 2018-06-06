@@ -18,7 +18,7 @@ class CreateAdherantsTable extends Migration
             $table->text('first_name');
             $table->text('last_name');
             $table->text('email');
-            $table->integer('n° licence');
+            $table->integer('licence_number');
             $table->timestamps();
         });
     }
