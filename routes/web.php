@@ -39,10 +39,13 @@ Route::get('/adherants', 'AdherantsController@index');
 
 Route::get('/adherants/create', 'AdherantsController@create');
 
-
 Route::get('/adherants/{adherant}', 'AdherantsController@show');
 
-Route::get('/adherants/{adherant}/edit', 'AdherantsController@edit');
+Route::get('/adherants/edit/{adherant}', 'AdherantsController@edit');
+
+Route::put('/adherants/update/{adherant}', 'AdherantsController@update');
+
+Route::put('/delete/{adherant}', 'AdherantsController@destroy');
 
 //Route::post('/adherants/{adherant}', 'AdherantsController@update');
 

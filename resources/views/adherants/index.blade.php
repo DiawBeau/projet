@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-
-    <title></title>
-</head>
-<body>
-
 @include('layout.layout')
-
 
 <div class="container">
 
-<ul id="liste">
-    @foreach ($adherants as $adherant)
-    <a href="/adherants/{{$adherant->id}}">
+    <ul id="liste">
+        @foreach ($adherants as $adherant)
         <div class ="event">
             <div class="titreEvent">{{$adherant->first_name}} {{$adherant->last_name}} </div>
             <ul>
@@ -22,27 +11,42 @@
                 <li><b>Email :</b> {{$adherant->email}} </li>
 
                 <li><b>n°licence :</b> {{$adherant->licence_number}} </li>
+                <li class="float-right">
+                    <a href="/adherants/{{$adherant->id}}">
+                        <button type="submit" class="btn btn-outline-primary">Plus de détails</button>
+                    </a>
+                </li>
             </ul>
-
-<!--    {{csrf_field()}}
-    {{method_field('DELETE')}}
-  <button type="submit" class="btn btn-default">Submit</button>
-
-</form>   
-<a href = 'delete/{{ $adherant->id }}'>Delete</a>     -->    
-
-
-          
-
-    </div>
-  </a>
-
-
-    @endforeach
-</ul>
-
+        </div>
+        @endforeach  
+    </ul>
 </div>
 
+<div id="accordion">
+    <div class="card">
+        @foreach ($adherants as $adherant)
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#{{$adherant->id}}" aria-expanded="false" aria-controls="collapse">
+                    {{$adherant->first_name}} {{$adherant->last_name}}
+                </button>
+            </h5>
+        </div>
+        <div id="{{$adherant->id}}" class="collapse" aria-labelledby="heading" data-parent="#accordion">
+            <div class="card-body">
+                <h4>{{$adherant->email}}</h4>
+                <h4>{{$adherant->licence_number}}</h4>
+                <h4>{{$adherant->created_at}}</h4>
+                <h4>{{$adherant->updated_at}}</h4>
 
-</body>
-</html>
+                <form method="POST" action="delete/{{ $adherant->id }}">
+                  {{csrf_field()}}
+                  {{method_field('PUT')}}
+                  <button type="submit">Supprimer</button>
+              </form>
+              <a href='/adherants/edit/{{$adherant->id}}'>Modifier</a>
+          </div>
+        </div>
+        @endforeach 
+    </div>
+</div>

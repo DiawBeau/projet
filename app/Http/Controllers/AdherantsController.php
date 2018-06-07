@@ -12,22 +12,20 @@ class AdherantsController extends Controller
 {
     public function index()
     {
-    		$adherants  = Adherant::all();
-    return view('adherants.index',compact('adherants'));
+    	$adherants  = Adherant::all();
+        return view('adherants.index',compact('adherants'));
     }
 
-
-        public function show( Adherant $adherant)
+    public function show( Adherant $adherant)
     {
-	//$adherant = Adherant::find($id);
-    return view('adherants.show',compact('adherant'));
+	   //$adherant = Adherant::find($id);
+        return view('adherants.show',compact('adherant'));
     }
 
-
-        public function edit( Adherant $adherant)
+    public function edit( Adherant $adherant)
     {
-    //$adherant = Adherant::find($id);
-    return view('adherants.edit',compact('adherant'));
+        //$adherant = Adherant::find($id);
+        return view('adherants.edit',compact('adherant'));
     }
 
     public function update(Request $req , $id)
@@ -38,12 +36,10 @@ class AdherantsController extends Controller
         return redirect('adherants');
     }
 
-
       public function create()
     {
         return view('adherants.create');
     }
-
 
     public function store()
     {
