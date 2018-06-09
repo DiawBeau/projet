@@ -27,11 +27,11 @@ Route::get('/trains/{train}', function ($id) {
 });
 
 */
-Route::get('/', function () {
+/*Route::get('/', function () {
 
     return view('welcome');
 });
-
+*/
 Route::get('/adherants', 'AdherantsController@index');
 
 //Route::get('adherants/delete/{id}', 'AdherantsController@destroy');
@@ -50,4 +50,10 @@ Route::put('/delete/{adherant}', 'AdherantsController@destroy');
 //Route::post('/adherants/{adherant}', 'AdherantsController@update');
 
 Route::post('/adherants', 'AdherantsController@store');
+
+
+Route::get('/', 'HomeController@index')->name('welcome');
+
+Auth::routes();
+
 

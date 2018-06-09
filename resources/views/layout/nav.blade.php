@@ -1,3 +1,21 @@
+<style type="text/css">
+  #logoutButton{
+    padding: 0px 0px 0px 0px;
+   /* background-color: #F8F9FA;
+    float: right;*/
+
+
+  }
+  #logoutButton:hover{
+    background-color: #DC3545;
+  }
+
+  #test:hover{
+    background-color: #DC3545;
+  }
+
+</style>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">La Bonne Raquette</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,6 +34,30 @@
       <li class="nav-item active">
         <a class="nav-link" href="/adherants/create">Creer <span class="sr-only">(current)</span></a>
       </li>
+      @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+      @else
+                          <button type="button" class="btn btn-danger" id="logoutButton">
+                            <li class="nav-item" class="btn btn-danger">
+                                                              <a class="dropdown-item" href="{{ route('logout') }}" id="test"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                            </li>
+                            </button>
+
+
+                        @endguest
       <!--<li class="nav-item active">
         <a class="nav-link" href="/trains">Trainings <span class="sr-only">(current)</span></a>
       </li>
@@ -37,9 +79,9 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>-->
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> -->
   </div>
 </nav>
