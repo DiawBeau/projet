@@ -27,9 +27,10 @@ Route::get('/trains/{train}', function ($id) {
 });
 
 */
+
 Route::get('/', function () {
 
-    return view('welcome');
+    return view('/welcome');
 });
 
 Route::get('/adherants', 'AdherantsController@index');
@@ -51,3 +52,8 @@ Route::put('/delete/{adherant}', 'AdherantsController@destroy');
 
 Route::post('/adherants', 'AdherantsController@store');
 
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
