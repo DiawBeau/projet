@@ -56,4 +56,8 @@ Route::post('/adherants', 'AdherantsController@store');
 
 Auth::routes();
 
+Route::get('/register', 'RegistrationController@create');
+
+Route::post('register', 'RegistrationController@store');
+
 Route::get('/home', 'HomeController@index')->name('home');

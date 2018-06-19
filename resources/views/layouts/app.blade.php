@@ -59,6 +59,12 @@
                             <a class="nav-link" href="/adherants/create">Creer <span class="sr-only">(current)</span></a>
                         </li>
 
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/register">Register <span class="sr-only">(current)</span></a>
+                        </li>
+
+
+
                         <div class="" aria-labelledby="navbarDropdown">
                            <a class="" href="{{ route('logout') }}"
                            onclick="event.preventDefault();

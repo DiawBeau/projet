@@ -22,14 +22,51 @@
     </ul>
 </div> -->
 
+
+
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="myFunction()" id="myInput" >
+ 
+
+  <script>
+function myFunction() {
+    var input, filter, ul, li, a, i, t,q,d;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("ma");
+    li = ul.getElementsByTagName("li");
+
+    console.log(li.length);
+    for (i = 0; i < li.length; i++) {
+
+        a = li[i].getElementsByTagName("button")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+            
+
+        } else {
+            li[i].style.display = "none";
+            /*console.log(li[i].getElementsByTagName("div").parentElement.nodeName);*/
+
+
+        }
+    }
+}
+</script>
+
+
 <div id="accordion" class="container">
+  <div id="ma">
     @foreach ($adherants as $adherant)
-    <div class="card col-md-12">
-        <div class="card-header" id="headingTwo">
+    <div class="card col-md-12" id ="bu">
+        <div class="card-header" id="bu2">
             <h5 class="mb-0">
+              <li style="
+    list-style-type: none;
+" >
                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#{{$adherant->id}}" aria-expanded="false" aria-controls="collapse">
                     {{$adherant->first_name}} {{$adherant->last_name}}
                 </button>
+                </li>
             </h5>
         </div>
         <div id="{{$adherant->id}}" class="collapse" aria-labelledby="heading" data-parent="#accordion">
@@ -96,6 +133,7 @@
 </div>
 </div>
 @endforeach 
+</div>
 
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-end">
@@ -111,4 +149,5 @@
 </ul>
 </nav>
 </div>
+
 
