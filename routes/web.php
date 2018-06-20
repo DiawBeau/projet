@@ -34,6 +34,8 @@ Route::get('/', function () {
 
 Route::get('/adherants', 'AdherantsController@index');
 
+Route::get('/adherants/test', 'AdherantsController@test');
+
 //Route::get('adherants/delete/{id}', 'AdherantsController@destroy');
 
 

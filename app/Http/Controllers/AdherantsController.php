@@ -16,6 +16,12 @@ class AdherantsController extends Controller
         return view('adherants.index',compact('adherants'));
     }
 
+    public function test( Adherant $adherant)
+    {
+       //$adherant = Adherant::find($id);
+        return view('adherants.test',compact('adherant'));
+    }
+
     public function show( Adherant $adherant)
     {
 	   //$adherant = Adherant::find($id);
