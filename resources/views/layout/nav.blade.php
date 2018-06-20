@@ -16,6 +16,20 @@
       <li class="nav-item active">
         <a class="nav-link" href="/adherants/create">Creer <span class="sr-only">(current)</span></a>
       </li>
+                          <div class="" aria-labelledby="navbarDropdown">
+                           <a class="" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                           {{ __('Logout') }}
+                           <li> </li>
+                       </a>
+
+
+
+                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
  <!--      @guest
       <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
       <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
