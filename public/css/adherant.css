@@ -1,0 +1,11 @@
+.container {
+	margin-top: 2em;
+}
+
+.pagination {
+	margin-top: 1em;	
+}
+
+button.btn:active{
+	background: #007bff;
+}
