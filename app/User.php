@@ -26,4 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /* 
+    * relation with model Adherant 
+    */
+    public function adherant(){
+        return $this->hasMany('App\Adherant');
+    }
 }

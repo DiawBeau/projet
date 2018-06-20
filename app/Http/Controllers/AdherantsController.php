@@ -22,6 +22,12 @@ class AdherantsController extends Controller
         return view('adherants.test',compact('adherant'));
     }
 
+    public function userId($id)
+    {
+       $user = Auth::user()->id;
+        return view('welcome',compact('user'));
+    }
+
     public function show( Adherant $adherant)
     {
 	   //$adherant = Adherant::find($id);

@@ -1,6 +1,7 @@
 <?php
 
 use App\Training;
+use App\User;
 
 
 /*
@@ -53,3 +54,8 @@ Route::put('/delete/{adherant}', 'AdherantsController@destroy');
 
 Route::post('/adherants', 'AdherantsController@store');
 
+// user route
+Route::get('/user/{id}', 'AdherantsController@userId');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
