@@ -1,8 +1,12 @@
+
+
 @extends('layout.layout')
+
 
 
 @section('content')
  
+
 
      <h2>Register</h2>
     <form method="POST" action="/register">
@@ -26,5 +30,6 @@
             <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
         </div>
             </form>
+
 
  @endsection

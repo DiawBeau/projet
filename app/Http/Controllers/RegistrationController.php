@@ -9,6 +9,11 @@ class RegistrationController extends Controller
 {
 	public function create()
 	{
+		if (auth()->guest()) {
+			return redirect('/home')->withErrors([
+				'email' => "Vous devez être connecté pour voir cette page.",
+			]);
+		}
 		return view('registration.create');
 	}
 

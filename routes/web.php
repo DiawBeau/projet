@@ -61,3 +61,6 @@ Route::get('/register', 'RegistrationController@create');
 Route::post('register', 'RegistrationController@store');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/user', 'UserController@index');

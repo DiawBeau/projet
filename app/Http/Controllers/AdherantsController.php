@@ -12,8 +12,15 @@ class AdherantsController extends Controller
 {
     public function index()
     {
+        if (auth()->guest()) {
+            return redirect('/home')->withErrors([
+                'email' => "Vous devez être connecté pour voir cette page.",
+            ]);
+        }
+        else{
     	$adherants  = Adherant::all();
         return view('adherants.index',compact('adherants'));
+    }
     }
 
     public function show( Adherant $adherant)

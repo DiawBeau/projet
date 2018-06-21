@@ -16,25 +16,30 @@
       <li class="nav-item active">
         <a class="nav-link" href="/adherants/create">Creer <span class="sr-only">(current)</span></a>
       </li>
-                          <div class="" aria-labelledby="navbarDropdown">
-                           <a class="" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                           document.getElementById('logout-form').submit();">
-                           {{ __('Logout') }}
-                           <li> </li>
-                       </a>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/user">user <span class="sr-only">(current)</span></a>
+      </li>
+
+      <div class="" aria-labelledby="navbarDropdown">
+       <a class="" href="{{ route('logout') }}"
+       onclick="event.preventDefault();
+       document.getElementById('logout-form').submit();">
+       {{ __('Logout') }}
+       <li> </li>
+     </a>
 
 
 
-                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
+     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+      @csrf
+    </form>
+  </div>
 
-                            <li class="nav-item active">
-                            <a class="nav-link" href="/register">Register <span class="sr-only">(current)</span></a>
-                        </li>
-  </ul>
+  <li class="nav-item active">
+    <a class="nav-link" href="/register">Register <span class="sr-only">(current)</span></a>
+  </li>
+</ul>
 <!--   <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="myFunction()" id="myInput" >
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>

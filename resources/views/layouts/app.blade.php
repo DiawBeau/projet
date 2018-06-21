@@ -62,20 +62,23 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="/register">Register <span class="sr-only">(current)</span></a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/user">user <span class="sr-only">(current)</span></a>
+                        </li>
 
 
 
                         <div class="" aria-labelledby="navbarDropdown">
-                           <a class="" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                           document.getElementById('logout-form').submit();">
-                           {{ __('Logout') }}
-                           <li> </li>
-                       </a>
+                         <a class="" href="{{ route('logout') }}"
+                         onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                         {{ __('Logout') }}
+                         <li> </li>
+                     </a>
 
 
 
-                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
                 </div>
