@@ -19,7 +19,11 @@
 
                 <!-- <a href='/adherants/edit/{{$adherant->id}}'>Modifier</a> -->
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#{{$adherant->last_name}}">Modifier</button>
+                @if(!Auth::guest())
+                    @if(Auth::user()->id == $adherant->user_id)
+                        <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#{{$adherant->last_name}}">Modifier</button>
+                    @endif
+                @endif
             </div>
         </div>
     </div>
